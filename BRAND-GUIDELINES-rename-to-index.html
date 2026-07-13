@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griggs Electric — Brand Design Guidelines</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #2B3A24; --forest-mid: #3F5233; --parchment: #F3F2E7; --panel: #EAEBDF;
+    --ink: #1B241E; --copper: #A6642B; --copper-light: #C98B4F; --line: #D8DBC9; --gray-text: #52564C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--parchment); color:var(--ink); font-family:'Inter',sans-serif; width:100%; overflow-x:hidden; }
+  body { line-height:1.6; font-size:16px; }
+  .wrap { width:100%; padding:0 22px; max-width:720px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Newsreader',serif; font-weight:600; margin:0; color:var(--ink); }
+  .label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:8px; }
+  header { background:var(--forest); padding:20px 22px; margin:0 -22px; display:flex; justify-content:space-between; align-items:baseline; border-bottom:3px solid var(--copper); }
+  header .wordmark { font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--parchment); }
+  header a { font-family:'Inter',sans-serif; font-size:12px; color:var(--copper-light); text-decoration:underline; }
+  section { padding:36px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type { border-bottom:none; }
+  h2.section-title { font-size:24px; margin-bottom:6px; padding-bottom:10px; border-bottom:2px solid var(--copper); display:inline-block; }
+  p.lead { font-family:'Inter',sans-serif; font-size:14.5px; color:var(--gray-text); max-width:56ch; margin:14px 0 22px; }
+
+  .thesis-box { background:var(--forest); border-radius:6px; padding:22px; border-left:4px solid var(--copper); }
+  .thesis-box p { font-family:'Newsreader',serif; font-style:italic; font-size:17px; color:var(--parchment); margin:0; line-height:1.5; }
+
+  /* SWATCHES */
+  .swatch-grid { display:flex; flex-direction:column; gap:2px; margin-top:10px; border:1px solid var(--line); border-radius:4px; overflow:hidden; }
+  .swatch { display:flex; align-items:center; padding:16px 18px; background:var(--panel); }
+  .swatch .chip { width:44px; height:44px; border-radius:4px; flex-shrink:0; border:1px solid rgba(0,0,0,0.12); }
+  .swatch .info { margin-left:16px; }
+  .swatch .name { font-family:'Inter',sans-serif; font-weight:600; font-size:14px; color:var(--ink); }
+  .swatch .role { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--gray-text); margin-top:2px; }
+  .swatch .hex { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--forest); margin-left:auto; padding-left:12px; font-weight:600; }
+
+  /* USAGE RULES */
+  .usage-row { border-left:3px solid var(--copper); padding:10px 0 10px 16px; margin-bottom:14px; }
+  .usage-row .num { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--forest); text-transform:uppercase; }
+  .usage-row h3 { font-size:16px; margin:4px 0 4px; font-family:'Inter',sans-serif; font-weight:700; }
+  .usage-row p { font-family:'Inter',sans-serif; font-size:14px; color:#333025; margin:0; }
+
+  /* TYPE SAMPLES */
+  .type-sample { border:1px solid var(--line); border-radius:4px; padding:18px 20px 16px; margin-bottom:12px; background:var(--panel); }
+  .type-sample .role-label { font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--copper); text-transform:uppercase; letter-spacing:0.08em; margin-bottom:10px; display:block; }
+  .type-sample .display-sample { font-family:'Newsreader',serif; font-size:24px; color:var(--ink); }
+  .type-sample .body-sample { font-family:'Inter',sans-serif; font-size:14.5px; color:#333025; margin-top:8px; max-width:48ch; }
+  .type-sample .mono-sample { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--forest); margin-top:8px; text-transform:uppercase; letter-spacing:0.04em; }
+  .type-sample .fontnote { font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:var(--gray-text); margin-top:10px; }
+
+  /* SIGNATURE ELEMENT */
+  .sig-demo { border:1px solid var(--line); border-radius:4px; padding:20px; background:var(--panel); }
+  .sig-demo h3.demo-title { font-size:19px; padding-bottom:8px; border-bottom:2px solid var(--copper); display:inline-block; margin-bottom:10px; }
+  .sig-demo .demo-card { border-left:3px solid var(--forest); padding:10px 0 10px 14px; }
+  .sig-demo .demo-card p { font-family:'Inter',sans-serif; font-size:13.5px; color:#333025; margin:0; }
+
+  .photo-note { border:1px solid var(--line); border-radius:4px; padding:18px 20px; background:var(--panel); }
+  .photo-note p { font-family:'Inter',sans-serif; font-size:13.5px; color:#333025; margin:0 0 8px; }
+  .photo-note p:last-child { margin-bottom:0; }
+
+  footer { padding:30px 0 50px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8A8F82; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">Griggs Electric — Brand Design Guidelines</div>
+    <a href="../">← Vault Home</a>
+  </header>
+
+  <!-- THESIS -->
+  <section>
+    <span class="label">The Direction</span>
+    <h2 class="section-title">Estate Green & Copper Wire.</h2>
+    <p class="lead">Built on top of the existing black-and-white identity — a restrained, established palette that reads correctly whether it's on a $400K new build or a $3M estate.</p>
+    <div class="thesis-box">
+      <p>Hunter green and a copper hairline — the color of the golf-course lots and manicured lawns across the service area, paired with a literal nod to the trade. Warm enough for family, disciplined enough for a master electrician.</p>
+    </div>
+  </section>
+
+  <!-- COLOR PALETTE -->
+  <section>
+    <span class="label">Color Palette</span>
+    <h2 class="section-title">Five tones, one job each.</h2>
+    <p class="lead">Every color has exactly one role. Nothing is decorative.</p>
+
+    <div class="swatch-grid">
+      <div class="swatch">
+        <div class="chip" style="background:#2B3A24;"></div>
+        <div class="info"><div class="name">Forest Green</div><div class="role">Dominant — headers, hero sections, key statements</div></div>
+        <div class="hex">#2B3A24</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#F3F2E7;"></div>
+        <div class="info"><div class="name">Parchment</div><div class="role">Base surface — page background</div></div>
+        <div class="hex">#F3F2E7</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#EAEBDF;"></div>
+        <div class="info"><div class="name">Panel</div><div class="role">Secondary surface — cards, callouts</div></div>
+        <div class="hex">#EAEBDF</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#A6642B;"></div>
+        <div class="info"><div class="name">Copper</div><div class="role">Accent — underlines, edges, tags. Never a large fill.</div></div>
+        <div class="hex">#A6642B</div>
+      </div>
+      <div class="swatch">
+        <div class="chip" style="background:#1B241E;"></div>
+        <div class="info"><div class="name">Ink</div><div class="role">Body text</div></div>
+        <div class="hex">#1B241E</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- USAGE RULES -->
+  <section>
+    <span class="label">How To Use It</span>
+    <h2 class="section-title">Rules, not just colors.</h2>
+
+    <div class="usage-row">
+      <span class="num">01</span>
+      <h3>Green carries the weight</h3>
+      <p>Forest green is the dominant color — headers, hero bands, and the most important statement on any page. It should feel like the anchor, the way black used to.</p>
+    </div>
+    <div class="usage-row">
+      <span class="num">02</span>
+      <h3>Copper is a detail, never a fill</h3>
+      <p>Used only for hairline underlines, left-edge accents on cards, small tags, and CTA buttons. If copper is covering more than a thin line or a button, it's being overused.</p>
+    </div>
+    <div class="usage-row">
+      <span class="num">03</span>
+      <h3>Parchment replaces white</h3>
+      <p>No pure white and no pure black anywhere in the system — parchment and ink carry those roles instead, keeping everything warm.</p>
+    </div>
+  </section>
+
+  <!-- TYPOGRAPHY -->
+  <section>
+    <span class="label">Typography</span>
+    <h2 class="section-title">A serif that reads as considered, not decorative.</h2>
+    <p class="lead">Newsreader for anything that needs weight — headlines, the family story, testimonials. Inter carries every working sentence. A monospace utility face marks labels and data, like a spec sheet.</p>
+
+    <div class="type-sample">
+      <span class="role-label">Display — Newsreader</span>
+      <div class="display-sample">Electrical work from people who treat your home like their own.</div>
+      <div class="fontnote">Google Fonts: Newsreader, weights 500/600, italic for emphasis</div>
+    </div>
+    <div class="type-sample">
+      <span class="role-label">Body — Inter</span>
+      <div class="body-sample">A community-focused electrical contractor serving North Texas homeowners with clear communication, honest pricing, and safe, long-lasting work.</div>
+      <div class="fontnote">Google Fonts: Inter, weights 400/500/600/700</div>
+    </div>
+    <div class="type-sample">
+      <span class="role-label">Utility / Labels — IBM Plex Mono</span>
+      <div class="mono-sample">Service Area — Southlake, TX</div>
+      <div class="fontnote">Google Fonts: IBM Plex Mono, weights 400/500/600</div>
+    </div>
+  </section>
+
+  <!-- SIGNATURE ELEMENT -->
+  <section>
+    <span class="label">Signature Element</span>
+    <h2 class="section-title">The copper hairline.</h2>
+    <p class="lead">Section titles carry a short copper underline; cards and callouts carry a copper or forest-green left edge. This is the one recurring visual signature across every page — restrained, and never repeated as a full border or box.</p>
+
+    <div class="sig-demo">
+      <h3 class="demo-title">Example Section Title</h3>
+      <div class="demo-card">
+        <p>Example card content — the left edge is the signature, not a heavy frame around the whole card.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTOGRAPHY -->
+  <section>
+    <span class="label">Photography Direction</span>
+    <div class="photo-note">
+      <p><b style="color:var(--forest);">Real jobs, shot clean.</b> Natural light, finished spaces, and the small details Tyler is proud of — not stock photography, not overly staged. The "invisible perfect work" philosophy means photography should show the result, not the process.</p>
+      <p>This is also where the Meta Ray-Ban POV social content becomes useful later — real job-site footage that still looks intentional against this palette, rather than raw phone-camera clutter.</p>
+    </div>
+  </section>
+
+  <footer>JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griggs Electric — Client Journey | Marketing Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #2B3A24; --forest-mid: #3F5233; --parchment: #F3F2E7; --panel: #EAEBDF;
+    --ink: #1B241E; --copper: #A6642B; --copper-light: #C98B4F; --line: #D8DBC9; --gray-text: #52564C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--parchment); color:var(--ink); font-family:'Inter',sans-serif; width:100%; overflow-x:hidden; }
+  body { line-height:1.6; font-size:16px; }
+  .wrap { width:100%; padding:0 22px; max-width:720px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Newsreader',serif; font-weight:600; margin:0; color:var(--ink); }
+  .label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:8px; }
+  header { background:var(--forest); padding:20px 22px; margin:0 -22px; display:flex; justify-content:space-between; align-items:baseline; border-bottom:3px solid var(--copper); }
+  header .wordmark { font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--parchment); }
+  header a { font-family:'Inter',sans-serif; font-size:12px; color:var(--copper-light); text-decoration:underline; }
+  section { padding:36px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type { border-bottom:none; }
+  h2.section-title { font-size:24px; margin-bottom:6px; padding-bottom:10px; border-bottom:2px solid var(--copper); display:inline-block; }
+  p.lead { font-family:'Inter',sans-serif; font-size:14.5px; color:var(--gray-text); max-width:56ch; margin:14px 0 22px; }
+
+  .circuit { position:relative; padding-left:30px; margin-top:10px; }
+  .circuit::before { content:""; position:absolute; left:9px; top:6px; bottom:6px; width:2px; background:repeating-linear-gradient(to bottom,var(--copper) 0px,var(--copper) 6px,transparent 6px,transparent 12px); }
+  .node { position:relative; padding-bottom:30px; }
+  .node:last-child { padding-bottom:0; }
+  .node::before { content:""; position:absolute; left:-30px; top:2px; width:16px; height:16px; background:var(--parchment); border:2px solid var(--forest); border-radius:3px; }
+  .node::after { content:""; position:absolute; left:-25px; top:7px; width:6px; height:6px; background:var(--copper); border-radius:50%; }
+  .node .stage { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--copper); letter-spacing:0.1em; text-transform:uppercase; margin-bottom:6px; display:block; }
+  .node h3 { font-size:18px; margin-bottom:6px; }
+  .node .feel { font-family:'Newsreader',serif; font-style:italic; font-size:13.5px; color:var(--forest); margin:0 0 8px; }
+  .node p.detail { font-family:'Inter',sans-serif; color:var(--gray-text); font-size:14px; margin:0 0 6px; }
+  .node .needs { font-family:'IBM Plex Mono',monospace; font-size:11px; color:var(--forest); background:var(--panel); padding:5px 10px; border-radius:12px; border:1px solid var(--line); display:inline-block; }
+
+  .wip-box { border:2px dashed var(--copper); border-radius:6px; padding:22px; background:var(--panel); }
+  .wip-box h3 { font-size:18px; margin-bottom:8px; color:var(--forest); font-family:'Inter',sans-serif; }
+  .wip-box p { font-family:'Inter',sans-serif; font-size:13.5px; color:#555044; margin:0; }
+
+  footer { padding:30px 0 50px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8A8F82; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="wordmark">Griggs Electric — Client Journey</div>
+    <a href="../">← Vault Home</a>
+  </header>
+
+  <section>
+    <span class="label">Client Journey</span>
+    <h2 class="section-title">From first hello to the next referral.</h2>
+    <p class="lead">Every stage is a chance to prove both halves of the brand — the warmth and the precision — at once. The "what the site needs" tag on each stage is what carries directly into the Website Menu.</p>
+
+    <div class="circuit">
+      <div class="node">
+        <span class="stage">Stage 1</span>
+        <h3>Discovery</h3>
+        <p class="feel">"Can I actually trust these people?"</p>
+        <p class="detail">A neighbor's referral, a social post, or a local search. The website and reviews need to answer that trust question before the phone ever rings.</p>
+        <span class="needs">Site needs: trust signals above the fold</span>
+      </div>
+      <div class="node">
+        <span class="stage">Stage 2</span>
+        <h3>Quote Call</h3>
+        <p class="feel">"Are they actually listening to my problem?"</p>
+        <p class="detail">The standardized intake script captures the right details warmly — not like a form being read off a screen.</p>
+        <span class="needs">Site needs: one obvious way to request a quote</span>
+      </div>
+      <div class="node">
+        <span class="stage">Stage 3</span>
+        <h3>Scheduled Visit</h3>
+        <p class="feel">"Will they actually show up when they said?"</p>
+        <p class="detail">Confirmation and reminders that feel personal, backed by a Housecall Pro system that never drops the appointment.</p>
+        <span class="needs">Site needs: booking flow tied to Housecall Pro</span>
+      </div>
+      <div class="node">
+        <span class="stage">Stage 4</span>
+        <h3>Job Day</h3>
+        <p class="feel">"Is this actually as good as people say?"</p>
+        <p class="detail">The moment the brand is made real — clean work, small details handled, the "family" feeling delivered in person.</p>
+        <span class="needs">Site needs: real before/after proof, not stock photos</span>
+      </div>
+      <div class="node">
+        <span class="stage">Stage 5</span>
+        <h3>Invoice & Follow-Up</h3>
+        <p class="feel">"Was that as easy as the rest of it?"</p>
+        <p class="detail">A clean, no-surprises invoice through Housecall Pro, plus a simple ask: a review, or to keep Griggs in mind next time.</p>
+        <span class="needs">Site needs: nothing — this stage lives in Housecall Pro</span>
+      </div>
+      <div class="node">
+        <span class="stage">Stage 6</span>
+        <h3>Referral Loop</h3>
+        <p class="feel">"Who else needs to hear about this?"</p>
+        <p class="detail">A happy customer becomes the next neighbor's referral — the same growth engine that built the business, now systemized instead of left to chance.</p>
+        <span class="needs">Site needs: reviews surfaced prominently, easy to share</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="label">What This Means for the Site</span>
+    <div class="wip-box" style="border-style:solid;">
+      <h3>Three real requirements, not guesses.</h3>
+      <p>Trust signals before the call, one obvious booking path, and Housecall Pro integration are no longer nice-to-haves — they're the direct output of where customers actually get stuck or reassured. These carry straight into the Website Menu next.</p>
+    </div>
+  </section>
+
+  <footer>JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</footer>
+</div>
+</body>
+</html>

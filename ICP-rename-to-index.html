@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griggs Electric — ICP | Marketing Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #2B3A24;
+    --forest-mid: #3F5233;
+    --parchment: #F3F2E7;
+    --panel: #EAEBDF;
+    --ink: #1B241E;
+    --copper: #A6642B;
+    --copper-light: #C98B4F;
+    --line: #D8DBC9;
+    --gray-text: #52564C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--parchment); color:var(--ink); font-family:'Inter',sans-serif; width:100%; overflow-x:hidden; }
+  body { line-height:1.6; font-size:16px; }
+  .wrap { width:100%; padding:0 22px; max-width:720px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Newsreader',serif; font-weight:600; margin:0; color:var(--ink); }
+  .label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:8px; }
+
+  header { background:var(--forest); padding:20px 22px; margin:0 -22px; display:flex; justify-content:space-between; align-items:baseline; border-bottom:3px solid var(--copper); }
+  header .wordmark { font-family:'IBM Plex Mono',monospace; font-size:13px; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; color:var(--parchment); }
+  header a { font-family:'Inter',sans-serif; font-size:12px; color:var(--copper-light); text-decoration:underline; }
+
+  section { padding:36px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type { border-bottom:none; }
+  h2.section-title { font-size:24px; margin-bottom:6px; padding-bottom:10px; border-bottom:2px solid var(--copper); display:inline-block; }
+  p.lead { font-family:'Inter',sans-serif; font-size:14.5px; color:var(--gray-text); max-width:56ch; margin:14px 0 22px; }
+
+  .statement {
+    border:1.5px solid var(--forest); border-radius:4px; padding:20px 22px; margin-bottom:8px; background:var(--panel);
+  }
+  .statement p { font-family:'Newsreader',serif; font-size:16px; color:var(--ink); margin:0; font-style:italic; line-height:1.55; }
+  .statement .who { display:block; margin-top:10px; font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--forest); font-style:normal; }
+
+  /* TIER CARDS */
+  .tier-card { border:1px solid var(--line); border-left:3px solid var(--forest); border-radius:4px; padding:18px 20px; margin-bottom:14px; background:var(--panel); }
+  .tier-card .tier-head { display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px; }
+  .tier-card h3 { font-size:18px; }
+  .tier-card .pricepoint { font-family:'IBM Plex Mono',monospace; font-size:12px; color:var(--copper); }
+  .tier-card .areas { font-family:'Inter',sans-serif; font-size:12px; color:#555044; margin:8px 0 10px; }
+  .tier-card .areas b { color:var(--forest); }
+  .tier-card p.desc { font-family:'Inter',sans-serif; font-size:14px; color:#333025; margin:0; }
+
+  /* HOME TYPES */
+  .home-row { border-left:3px solid var(--copper); padding:10px 0 10px 16px; margin-bottom:14px; }
+  .home-row .num { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.1em; color:var(--forest); text-transform:uppercase; }
+  .home-row h3 { font-size:16px; margin:4px 0 4px; font-family:'Inter',sans-serif; font-weight:700; }
+  .home-row p { font-family:'Inter',sans-serif; font-size:14px; color:#333025; margin:0; }
+
+  /* WANTS */
+  .want-grid { display:flex; flex-direction:column; gap:10px; margin-top:6px; }
+  .want-item { border:1px solid var(--line); border-radius:4px; padding:14px 16px; background:var(--panel); }
+  .want-item .tag { font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.1em; text-transform:uppercase; color:var(--forest); display:block; margin-bottom:6px; }
+  .want-item p { font-family:'Inter',sans-serif; font-size:14px; color:var(--ink); margin:0; }
+
+  /* PHILOSOPHY CALLOUT */
+  .philosophy {
+    background:var(--forest); color:var(--parchment); border-radius:6px; padding:24px 22px; text-align:left;
+    border-left:4px solid var(--copper);
+  }
+  .philosophy .label { color:#A9C79A; }
+  .philosophy p.quote { font-family:'Newsreader',serif; font-size:19px; font-style:italic; margin:0 0 12px; line-height:1.4; }
+  .philosophy p.explain { font-family:'Inter',sans-serif; font-size:13.5px; color:#D3DAC9; margin:0; font-style:normal; }
+
+  .wip-box {
+    border:2px dashed var(--copper); border-radius:6px; padding:22px; text-align:left; background:var(--panel);
+  }
+  .wip-box .label { color:var(--copper); }
+  .wip-box h3 { font-size:18px; margin-bottom:8px; color:var(--forest); font-family:'Inter',sans-serif; }
+  .wip-box p { font-family:'Inter',sans-serif; font-size:13.5px; color:#555044; margin:0 0 8px; }
+
+  footer { padding:30px 0 50px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8A8F82; }
+
+  .source-note { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A8F82; margin-top:6px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">Griggs Electric — ICP</div>
+    <a href="../">← Vault Home</a>
+  </header>
+
+  <!-- INTRO -->
+  <section>
+    <span class="label">Ideal Client Profile</span>
+    <h2 class="section-title">Who Griggs Electric is actually walking into the home of.</h2>
+    <p class="lead">The 12 service-area communities span a real range — from established growth suburbs to some of the wealthiest zip codes in North Texas. That range is the ICP: it's not one household type, it's a ladder, and the brand needs to speak to all of it without alienating either end.</p>
+  </section>
+
+  <!-- TIER 1: LUXURY ESTATE -->
+  <section>
+    <span class="label">Segment 1 of 3</span>
+    <div class="tier-card">
+      <div class="tier-head">
+        <h3>The Luxury Estate Household</h3>
+        <span class="pricepoint">$1.2M – $3M+ homes</span>
+      </div>
+      <div class="areas"><b>Southlake · Westlake · Trophy Club (upper tier) · Bartonville</b></div>
+      <p class="desc">Westlake is home to Fidelity Investments and a concentration of C-suite executives; Southlake draws steady corporate relocation buyers into Carroll ISD; Vaquero and Entrada estates in Westlake regularly exceed $3M. These are custom estates, golf-course lots, resort-style outdoor living, and smart-home builds — homeowners who have already made it, and whose homes are part of how that shows.</p>
+      <div class="source-note">Southlake median home value ≈ $1.65M; Westlake estates commonly $1.6M–$3M+ (Zillow, Redfin, Wynne Moore Group, 2026).</div>
+    </div>
+  </section>
+
+  <!-- TIER 2: ESTABLISHED AFFLUENT -->
+  <section>
+    <span class="label">Segment 2 of 3</span>
+    <div class="tier-card">
+      <div class="tier-head">
+        <h3>The Established Affluent Household</h3>
+        <span class="pricepoint">$600K – $900K homes</span>
+      </div>
+      <div class="areas"><b>Keller · Grapevine · Argyle · Lantana · Trophy Club (broader)</b></div>
+      <p class="desc">Comfortable, settled families — often move-up buyers who've been in the area a while, own their home outright or close to it, and treat it as the place they intend to stay. Trophy Club in particular functions as the "executive residential wing" of the Westlake financial corridor — successful, but not flaunting it.</p>
+      <div class="source-note">Median home values roughly $600K–$900K across these areas (Zillow, Redfin, 2026).</div>
+    </div>
+  </section>
+
+  <!-- TIER 3: GROWTH SUBURB -->
+  <section>
+    <span class="label">Segment 3 of 3</span>
+    <div class="tier-card">
+      <div class="tier-head">
+        <h3>The Growing Family Household</h3>
+        <span class="pricepoint">$370K – $530K homes</span>
+      </div>
+      <div class="areas"><b>Roanoke · Northlake · Justin · Haslet</b></div>
+      <p class="desc">Newer construction, growth-corridor communities — families who are building equity and building a life at the same time. Less established wealth, more forward momentum. This is also where Griggs Electric is headquartered, which matters: this is home turf, not just a service radius.</p>
+      <div class="source-note">Median home values roughly $370K–$530K across these areas (Zillow, 2026).</div>
+    </div>
+  </section>
+
+  <!-- TYPE OF HOMES -->
+  <section>
+    <span class="label">The Homes Themselves</span>
+    <h2 class="section-title">What Griggs Electric is being invited into.</h2>
+    <p class="lead">Across all three tiers, the actual jobs skew toward homes people are proud of and actively investing in — not emergency repairs on neglected houses.</p>
+
+    <div class="home-row">
+      <span class="num">01</span>
+      <h3>Custom & golf-course estates</h3>
+      <p>Southlake, Westlake, and upper Trophy Club — smart-home wiring, outdoor living and pool electrical, whole-home panel upgrades for renovations.</p>
+    </div>
+    <div class="home-row">
+      <span class="num">02</span>
+      <h3>Established family homes mid-remodel</h3>
+      <p>Keller, Grapevine, Argyle, Lantana — kitchen and outdoor remodels, lighting upgrades, the projects that turn a good house into "my husband's favorite room."</p>
+    </div>
+    <div class="home-row">
+      <span class="num">03</span>
+      <h3>New-construction and growth-suburb homes</h3>
+      <p>Roanoke, Northlake, Justin, Haslet — new outlets, efficiency upgrades, and the electrical work that comes with a family actively building out their first real home.</p>
+    </div>
+  </section>
+
+  <!-- WHAT THEY WANT -->
+  <section>
+    <span class="label">What They're Actually Buying</span>
+    <h2 class="section-title">Not electrical work. Peace of mind.</h2>
+    <p class="lead">Across every tier, the emotional want is the same — only the stakes and the price tag scale up.</p>
+
+    <div class="want-grid">
+      <div class="want-item">
+        <span class="tag">Trust With Their Home</span>
+        <p>Someone who won't damage the house, track dust through it, or leave a mess behind — treating it the way they'd treat their own.</p>
+      </div>
+      <div class="want-item">
+        <span class="tag">Zero Worry</span>
+        <p>Not wanting to think about the electrical again after the crew leaves — no callbacks, no "is that going to be a problem later."</p>
+      </div>
+      <div class="want-item">
+        <span class="tag">Invisible Execution</span>
+        <p>The best compliment is no compliment at all — the work disappears behind the wall, and the house just works.</p>
+      </div>
+      <div class="want-item">
+        <span class="tag">Pride, Reflected Back</span>
+        <p>Especially at the top of the ladder — a home that feels finished and flawless is part of how the owner experiences their own success.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TYLER'S PHILOSOPHY -->
+  <section>
+    <span class="label">Tyler's Internal Philosophy</span>
+    <div class="philosophy">
+      <p class="quote">"I want to do perfect work. I don't want my clients to worry about anything — so they can just look around their house and say, 'I'm rich!'"</p>
+      <p class="explain">This is the emotional target for every tier of the ICP, not just the luxury end. Whether the house is $400K or $3M, the job is the same: remove every worry until all that's left is a homeowner enjoying their own house.</p>
+    </div>
+  </section>
+
+  <!-- DESIGN LANGUAGE -->
+  <section>
+    <span class="label">Visual Identity</span>
+    <h2 class="section-title">Where the palette came from.</h2>
+    <p class="lead">This research is exactly what pointed toward hunter green — the color already surrounding the Luxury and Established tiers, while staying warm enough for the Growing Family tier. Full palette and guidelines: <a href="../brand%20guidelines/" style="color:var(--forest);">Brand Design Guidelines</a>.</p>
+  </section>
+
+  <footer>JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</footer>
+
+</div>
+</body>
+</html>
