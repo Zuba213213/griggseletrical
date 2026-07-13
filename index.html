@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griggs Electric — Marketing Vault</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;1,400&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --forest: #2B3A24; --forest-mid: #3F5233; --parchment: #F3F2E7; --panel: #EAEBDF;
+    --ink: #1B241E; --copper: #A6642B; --copper-light: #C98B4F; --line: #D8DBC9; --gray-text: #52564C;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin:0; padding:0; background:var(--parchment); color:var(--ink); font-family:'Inter',sans-serif; width:100%; overflow-x:hidden; }
+  body { line-height:1.6; font-size:16px; }
+  .wrap { width:100%; padding:0 22px; max-width:720px; margin:0 auto; }
+  h1,h2,h3 { font-family:'Newsreader',serif; font-weight:600; margin:0; color:var(--ink); }
+  .label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:8px; }
+
+  header { background:var(--forest); padding:26px 22px; margin:0 -22px; border-bottom:3px solid var(--copper); }
+  header .wordmark { font-family:'Newsreader',serif; font-weight:600; font-size:19px; color:var(--parchment); }
+  header .sub { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A9C79A; margin-top:6px; letter-spacing:0.06em; text-transform:uppercase; }
+
+  .hero { padding:40px 0 34px; border-bottom:1px solid var(--line); }
+  .hero h1 { font-size:29px; line-height:1.3; }
+  .hero p { font-family:'Inter',sans-serif; font-size:15px; color:var(--gray-text); margin-top:14px; max-width:52ch; }
+
+  nav.pagelist { padding:30px 0; border-bottom:1px solid var(--line); }
+  nav.pagelist .item {
+    display:block; border:1px solid var(--line); border-radius:4px; background:var(--panel);
+    padding:16px 18px; margin-bottom:10px; text-decoration:none; color:var(--ink);
+    border-left:3px solid var(--copper);
+  }
+  nav.pagelist .item .num { font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); display:block; margin-bottom:4px; }
+  nav.pagelist .item h3 { font-size:17px; }
+  nav.pagelist .item p { font-family:'Inter',sans-serif; font-size:13px; color:#555044; margin:4px 0 0; }
+
+  nav.pagelist .item.upcoming { opacity:0.72; border-left:3px solid var(--line); }
+  nav.pagelist .item.upcoming .num { color:var(--gray-text); }
+
+  .note {
+    border-left:3px solid var(--copper); background:var(--panel); border-radius:4px; padding:16px 18px; margin:24px 0;
+    font-family:'Inter',sans-serif; font-size:13.5px; color:var(--gray-text);
+  }
+  .note b { color:var(--forest); }
+
+  footer { padding:30px 0 50px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8A8F82; letter-spacing:0.03em; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="wordmark">Griggs Electric</div>
+    <div class="sub">Marketing Vault — Prepared by JRZ Consulting Solutions</div>
+  </header>
+
+  <div class="hero">
+    <span class="label">Start Here</span>
+    <h1>The single reference point for the brand, the ideal client, and everything built from it.</h1>
+    <p>Every page here works from the same foundation — who Griggs Electric is, who it's actually serving, and the visual and verbal identity that ties it all together. This is the source of truth for the website refresh and everything after it.</p>
+  </div>
+
+  <nav class="pagelist">
+    <span class="label">Contents</span>
+    <a class="item" href="brand/">
+      <span class="num">01 · Brand</span>
+      <h3>Positioning & Pricing</h3>
+      <p>The core positioning statement, the family/master-electrician balance, premium pricing philosophy, and the service area.</p>
+    </a>
+    <a class="item" href="ICP/">
+      <span class="num">02 · ICP</span>
+      <h3>Ideal Client Profile</h3>
+      <p>Three client tiers across the service area, the homes they're inviting Griggs Electric into, and what they're actually paying for.</p>
+    </a>
+    <a class="item" href="brand%20guidelines/">
+      <span class="num">03 · Design</span>
+      <h3>Brand Design Guidelines</h3>
+      <p>The full color palette with hex codes, typography, and usage rules — everything needed to apply this identity consistently.</p>
+    </a>
+    <a class="item" href="tone%20%26%20copy/">
+      <span class="num">04 · Voice</span>
+      <h3>Tone & Copy</h3>
+      <p>How Griggs Electric sounds in writing, with sample copy and how emphasis shifts across client tiers.</p>
+    </a>
+    <a class="item" href="client%20journey/">
+      <span class="num">05 · Journey</span>
+      <h3>Client Journey</h3>
+      <p>Six stages from first discovery to referral, each mapped to what it means for the website.</p>
+    </a>
+    <a class="item" href="website%20menu/">
+      <span class="num">06 · Website</span>
+      <h3>Website Menu</h3>
+      <p>The tiered scope for the site refresh — Essential, Full, and Growth-Ready options.</p>
+    </a>
+    <a class="item" href="social%20media%20menu/">
+      <span class="num">07 · Social</span>
+      <h3>Social Media Menu</h3>
+      <p>Content formats organized by brand pillar, each tagged to an ICP tier and journey stage.</p>
+    </a>
+  </nav>
+
+  <div class="note">
+    <b>How to use this:</b> Start with Brand and ICP if you're new to this — everything else, including the website plan, is built directly from what's in those two pages.
+  </div>
+
+  <footer>JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</footer>
+
+</div>
+</body>
+</html>
