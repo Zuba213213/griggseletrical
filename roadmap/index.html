@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Griggs Electric — Finding the Middle</title>
+<title>Griggs Electric — Marketing Vault — Business Systems Roadmap</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
@@ -201,9 +201,37 @@
     .pole-desc{display:none;}
     .sweet-zone::after{font-size:9px;}
   }
+
+  /* TOP BAR — matches Vault header */
+  .vault-bar{
+    background:var(--green); border-bottom:3px solid var(--copper);
+    padding:18px 24px; display:flex; align-items:center; justify-content:space-between;
+    flex-wrap:wrap; gap:10px;
+  }
+  .vault-bar .wordmark{font-family:'Newsreader',serif; font-weight:600; font-size:17px; color:var(--parchment);}
+  .vault-bar .sub{font-family:'IBM Plex Mono',monospace; font-size:10.5px; color:#A9C79A; letter-spacing:0.06em; text-transform:uppercase; margin-top:3px;}
+  .vault-bar a.back{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--copper-light); text-decoration:none; border:1px solid var(--copper-light);
+    padding:8px 16px; border-radius:999px; white-space:nowrap; transition:opacity .15s ease;
+  }
+  .vault-bar a.back:hover{opacity:0.75;}
+
+  .vault-footer{
+    background:var(--parchment); padding:26px 24px 40px; text-align:center;
+    font-family:'IBM Plex Mono',monospace; font-size:11px; color:#8A8F82; letter-spacing:0.03em;
+  }
 </style>
 </head>
 <body>
+
+<div class="vault-bar">
+  <div>
+    <div class="wordmark">Griggs Electric</div>
+    <div class="sub">Marketing Vault — Business Systems Roadmap</div>
+  </div>
+  <a class="back" href="../">← Back to Vault</a>
+</div>
 
 <section id="hero">
   <div class="eyebrow">JRZ Consulting × Griggs Electric</div>
@@ -318,6 +346,8 @@
   <p class="sub">Not chaos. Not lockdown. The version of this that still feels like Griggs.</p>
   <div class="cta-tag">let's talk it through</div>
 </section>
+
+<div class="vault-footer">JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</div>
 
 <script>
   const track = document.getElementById('track');
