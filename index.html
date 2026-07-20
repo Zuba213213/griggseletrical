@@ -17,14 +17,31 @@
   .wrap { width:100%; padding:0 22px; max-width:720px; margin:0 auto; }
   h1,h2,h3 { font-family:'Newsreader',serif; font-weight:600; margin:0; color:var(--ink); }
   .label { font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em; text-transform:uppercase; color:var(--copper); display:block; margin-bottom:8px; }
-
   header { background:var(--forest); padding:26px 22px; margin:0 -22px; border-bottom:3px solid var(--copper); }
   header .wordmark { font-family:'Newsreader',serif; font-weight:600; font-size:19px; color:var(--parchment); }
   header .sub { font-family:'IBM Plex Mono',monospace; font-size:11px; color:#A9C79A; margin-top:6px; letter-spacing:0.06em; text-transform:uppercase; }
-
   .hero { padding:40px 0 34px; border-bottom:1px solid var(--line); }
   .hero h1 { font-size:29px; line-height:1.3; }
   .hero p { font-family:'Inter',sans-serif; font-size:15px; color:var(--gray-text); margin-top:14px; max-width:52ch; }
+
+  /* Featured item — the roadmap */
+  .featured {
+    display:block; text-decoration:none; color:var(--ink);
+    background:var(--forest); border-radius:6px; padding:22px 22px;
+    margin:28px 0 0; border-left:3px solid var(--copper-light);
+    position:relative; overflow:hidden;
+  }
+  .featured .num {
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--copper-light); display:flex; align-items:center; gap:8px; margin-bottom:6px;
+  }
+  .featured .tag {
+    font-family:'IBM Plex Mono',monospace; font-size:9.5px; letter-spacing:0.08em; text-transform:uppercase;
+    background:var(--copper); color:var(--parchment); padding:2px 8px; border-radius:999px;
+  }
+  .featured h3 { font-size:19px; color:var(--parchment); }
+  .featured p { font-family:'Inter',sans-serif; font-size:13.5px; color:#C9CFC0; margin:6px 0 0; max-width:48ch; }
+  .featured .arrow { position:absolute; right:20px; bottom:18px; color:var(--copper-light); font-family:'IBM Plex Mono',monospace; font-size:13px; }
 
   nav.pagelist { padding:30px 0; border-bottom:1px solid var(--line); }
   nav.pagelist .item {
@@ -35,32 +52,34 @@
   nav.pagelist .item .num { font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.08em; text-transform:uppercase; color:var(--forest); display:block; margin-bottom:4px; }
   nav.pagelist .item h3 { font-size:17px; }
   nav.pagelist .item p { font-family:'Inter',sans-serif; font-size:13px; color:#555044; margin:4px 0 0; }
-
   nav.pagelist .item.upcoming { opacity:0.72; border-left:3px solid var(--line); }
   nav.pagelist .item.upcoming .num { color:var(--gray-text); }
-
   .note {
     border-left:3px solid var(--copper); background:var(--panel); border-radius:4px; padding:16px 18px; margin:24px 0;
     font-family:'Inter',sans-serif; font-size:13.5px; color:var(--gray-text);
   }
   .note b { color:var(--forest); }
-
   footer { padding:30px 0 50px; font-family:'IBM Plex Mono',monospace; font-size:11.5px; color:#8A8F82; letter-spacing:0.03em; }
 </style>
 </head>
 <body>
 <div class="wrap">
-
   <header>
     <div class="wordmark">Griggs Electric</div>
     <div class="sub">Marketing Vault — Prepared by JRZ Consulting Solutions</div>
   </header>
-
   <div class="hero">
     <span class="label">Start Here</span>
     <h1>The single reference point for the brand, the ideal client, and everything built from it.</h1>
     <p>Every page here works from the same foundation — who Griggs Electric is, who it's actually serving, and the visual and verbal identity that ties it all together. This is the source of truth for the website refresh and everything after it.</p>
   </div>
+
+  <a class="featured" href="roadmap/">
+    <div class="num"><span class="tag">New</span> Start Here First</div>
+    <h3>Business Systems Roadmap</h3>
+    <p>An interactive walkthrough — drag a slider between chaos and lockdown to find where Griggs should actually sit, then see the four systems, the build options, and where it all leads.</p>
+    <div class="arrow">→</div>
+  </a>
 
   <nav class="pagelist">
     <span class="label">Contents</span>
@@ -100,13 +119,10 @@
       <p>Content formats organized by brand pillar, each tagged to an ICP tier and journey stage.</p>
     </a>
   </nav>
-
   <div class="note">
-    <b>How to use this:</b> Start with Brand and ICP if you're new to this — everything else, including the website plan, is built directly from what's in those two pages.
+    <b>How to use this:</b> Start with the Roadmap for the big picture, then Brand and ICP for the foundation — everything else, including the website plan, is built directly from what's in those pages.
   </div>
-
   <footer>JRZ CONSULTING SOLUTIONS · MARKETING VAULT FOR GRIGGS ELECTRIC LLC</footer>
-
 </div>
 </body>
 </html>
