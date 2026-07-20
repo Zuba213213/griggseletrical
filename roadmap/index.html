@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Griggs Electric — Finding the Middle</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#2B3A24;
+    --green-deep:#1D2818;
+    --copper:#A6642B;
+    --copper-light:#C98A4E;
+    --parchment:#F3F2E7;
+    --parchment-dim:#E9E7D8;
+    --ink:#26251F;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--parchment);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    overflow-x:hidden;
+  }
+  section{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    padding:60px 24px;
+    position:relative;
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace;
+    font-weight:600;
+    font-size:13px;
+    letter-spacing:0.18em;
+    color:var(--copper);
+    text-transform:uppercase;
+    margin-bottom:14px;
+  }
+  h1,h2,h3{
+    font-family:'Newsreader',serif;
+    color:var(--green);
+    font-weight:700;
+    line-height:1.08;
+  }
+  .sub{
+    font-size:19px;
+    color:var(--ink);
+    opacity:0.75;
+    max-width:520px;
+    text-align:center;
+    margin-top:16px;
+    line-height:1.5;
+  }
+
+  /* HERO */
+  #hero{background:var(--green); color:var(--parchment);}
+  #hero .eyebrow{color:var(--copper-light);}
+  #hero h1{color:var(--parchment); font-size:clamp(38px,7vw,68px); text-align:center; max-width:820px;}
+  #hero .sub{color:var(--parchment); opacity:0.8;}
+  .scrolldown{
+    margin-top:56px; font-family:'IBM Plex Mono',monospace; font-size:12px;
+    letter-spacing:0.15em; color:var(--copper-light); text-transform:uppercase;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+    animation:bob 1.8s ease-in-out infinite;
+  }
+  @keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(8px);}}
+
+  /* SPECTRUM SECTION — signature element */
+  #spectrum{background:var(--parchment);}
+  #spectrum h2{font-size:clamp(30px,5vw,44px); text-align:center; max-width:760px;}
+  .spectrum-wrap{
+    width:100%; max-width:920px; margin-top:56px;
+  }
+  .pole-labels{
+    display:flex; justify-content:space-between; align-items:flex-end;
+    margin-bottom:18px;
+  }
+  .pole{
+    display:flex; flex-direction:column; gap:6px; max-width:220px;
+  }
+  .pole.left{align-items:flex-start; text-align:left;}
+  .pole.right{align-items:flex-end; text-align:right;}
+  .pole-title{
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:15px;
+    letter-spacing:0.08em; text-transform:uppercase;
+  }
+  .pole.left .pole-title{color:var(--copper);}
+  .pole.right .pole-title{color:var(--green);}
+  .pole-desc{font-size:14px; color:var(--ink); opacity:0.65; line-height:1.4;}
+
+  .track{
+    position:relative; height:14px; border-radius:8px; margin-top:44px;
+    background:linear-gradient(to right, var(--copper) 0%, var(--copper-light) 30%, var(--parchment-dim) 50%, #8fa17f 70%, var(--green) 100%);
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.25);
+  }
+  .sweet-zone{
+    position:absolute; top:-14px; bottom:-14px; left:38%; width:24%;
+    border-radius:10px; border:2px dashed var(--green);
+    background:rgba(166,100,43,0.06);
+  }
+  .sweet-zone::after{
+    content:"THE SWEET SPOT — WE BUILD THIS TOGETHER";
+    position:absolute; top:-38px; left:50%; transform:translateX(-50%);
+    font-family:'IBM Plex Mono',monospace; font-size:10.5px; font-weight:600;
+    letter-spacing:0.06em; color:var(--green); white-space:nowrap;
+    text-align:center;
+  }
+  .handle{
+    position:absolute; top:50%; left:50%;
+    width:38px; height:38px; border-radius:50%;
+    background:var(--parchment); border:4px solid var(--green);
+    transform:translate(-50%,-50%);
+    cursor:grab; box-shadow:0 3px 10px rgba(0,0,0,0.3);
+    display:flex; align-items:center; justify-content:center;
+    transition:box-shadow .15s ease;
+    touch-action:none;
+  }
+  .handle:active{cursor:grabbing; box-shadow:0 0 0 8px rgba(43,58,36,0.15);}
+  .handle svg{width:16px;height:16px;}
+
+  .readout{
+    margin-top:44px; min-height:118px;
+    display:flex; align-items:center; justify-content:center;
+    text-align:center;
+  }
+  .readout-card{
+    max-width:560px; padding:22px 30px; border-radius:14px;
+    background:var(--green); color:var(--parchment);
+    font-family:'Newsreader',serif; font-size:19px; font-style:italic;
+    line-height:1.4; transition:opacity .2s ease;
+  }
+  .readout-card b{font-style:normal; font-family:'Inter',sans-serif; font-weight:700; display:block; margin-bottom:6px; font-size:13px; letter-spacing:0.1em; text-transform:uppercase; color:var(--copper-light);}
+
+  /* FOUR PILLARS */
+  #pillars{background:var(--green); color:var(--parchment);}
+  #pillars .eyebrow{color:var(--copper-light);}
+  #pillars h2{color:var(--parchment); font-size:clamp(30px,5vw,44px); text-align:center; margin-bottom:48px;}
+  .grid4{
+    display:grid; grid-template-columns:repeat(2,1fr); gap:20px;
+    width:100%; max-width:900px;
+  }
+  .card{
+    background:var(--parchment); color:var(--ink); border-radius:16px;
+    padding:26px 24px; display:flex; flex-direction:column; gap:10px;
+    border-bottom:4px solid var(--copper);
+  }
+  .card .icon{width:34px; height:34px; color:var(--copper); margin-bottom:4px;}
+  .card h3{font-size:20px; color:var(--green);}
+  .card p{font-size:14.5px; opacity:0.75; line-height:1.4;}
+
+  /* TWO PATHS */
+  #paths{background:var(--parchment);}
+  #paths h2{font-size:clamp(30px,5vw,44px); text-align:center;}
+  .paths-row{
+    display:flex; gap:22px; margin-top:48px; flex-wrap:wrap; justify-content:center;
+  }
+  .path-card{
+    width:260px; padding:30px 22px; border-radius:16px; text-align:center;
+    display:flex; flex-direction:column; align-items:center; gap:10px;
+  }
+  .path-card.good{background:var(--green); color:var(--parchment);}
+  .path-card.bad{background:transparent; border:2px dashed #b5b09a; color:var(--ink); opacity:0.55;}
+  .path-card .icon{width:36px;height:36px;}
+  .path-card.good .icon{color:var(--copper-light);}
+  .path-card h3{font-size:19px;}
+  .path-card.good h3{color:var(--parchment);}
+  .path-card p{font-size:13.5px; line-height:1.4; opacity:0.85;}
+  .strike{text-decoration: line-through; text-decoration-color: var(--copper); text-decoration-thickness:2px;}
+
+  /* WHERE THIS LEADS */
+  #leads{background:var(--parchment-dim);}
+  #leads h2{font-size:clamp(30px,5vw,44px); text-align:center; margin-bottom:8px;}
+  .leads-row{
+    display:flex; gap:28px; margin-top:44px; flex-wrap:wrap; justify-content:center; max-width:920px;
+  }
+  .lead-item{
+    width:250px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:10px;
+  }
+  .lead-item .icon{width:40px;height:40px; color:var(--green);}
+  .lead-item h3{font-size:17px; color:var(--green);}
+  .lead-item p{font-size:13.5px; opacity:0.7; line-height:1.4;}
+
+  /* CTA */
+  #cta{background:var(--green); color:var(--parchment); text-align:center;}
+  #cta h2{color:var(--parchment); font-size:clamp(34px,6vw,54px); max-width:760px;}
+  #cta .sub{color:var(--parchment); opacity:0.85;}
+  .cta-tag{
+    margin-top:34px; font-family:'IBM Plex Mono',monospace; font-size:13px;
+    letter-spacing:0.12em; color:var(--copper-light); text-transform:uppercase;
+    border:1px solid var(--copper-light); padding:12px 26px; border-radius:999px;
+  }
+
+  @media(max-width:640px){
+    .grid4{grid-template-columns:1fr;}
+    .pole-desc{display:none;}
+    .sweet-zone::after{font-size:9px;}
+  }
+</style>
+</head>
+<body>
+
+<section id="hero">
+  <div class="eyebrow">JRZ Consulting × Griggs Electric</div>
+  <h1>Let's design the rhythm<br>your business runs on.</h1>
+  <p class="sub">Not more rules. Not less structure. The exact middle that fits how Griggs actually works.</p>
+  <div class="scrolldown">↓ start here</div>
+</section>
+
+<section id="spectrum">
+  <div class="eyebrow">Drag the dot</div>
+  <h2>Every business lives somewhere on this line.</h2>
+  <div class="spectrum-wrap">
+    <div class="pole-labels">
+      <div class="pole left">
+        <span class="pole-title">⚡ Chaos</span>
+        <span class="pole-desc">Nothing's written down. Everything lives in your head. One bad week and it shows.</span>
+      </div>
+      <div class="pole right">
+        <span class="pole-title">Lockdown 🔒</span>
+        <span class="pole-desc">Every minute scripted. No room to breathe. Feels like a machine, not Griggs.</span>
+      </div>
+    </div>
+    <div class="track" id="track">
+      <div class="sweet-zone"></div>
+      <div class="handle" id="handle">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M8 8l-5 4 5 4M16 8l5 4-5 4"/></svg>
+      </div>
+    </div>
+    <div class="readout">
+      <div class="readout-card" id="readout">
+        <b>Drag me</b>
+        Slide toward either side to feel what it costs — then let's talk about where Griggs should actually sit.
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pillars">
+  <div class="eyebrow">The four things we build</div>
+  <h2>One operating system.<br>Four moving parts.</h2>
+  <div class="grid4">
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+      <h3>Weekly Rhythm</h3>
+      <p>Monday = restock &amp; reset. No jobs booked that morning. Every van starts the week ready.</p>
+    </div>
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg>
+      <h3>Inventory Cycle</h3>
+      <p>Pull what's used from invoices. Stock it. Every 90 days: restock what moves, return what doesn't.</p>
+    </div>
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      <h3>Intake Scripts</h3>
+      <p>Every call captures the full job upfront. The crew shows up with a plan, not a guess.</p>
+    </div>
+    <div class="card">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 11-5.8-1.6"/></svg>
+      <h3>Marketing Cadence</h3>
+      <p>A steady drumbeat runs itself. Campaigns layer on top when you want a push.</p>
+    </div>
+  </div>
+</section>
+
+<section id="paths">
+  <div class="eyebrow">How we build it</div>
+  <h2>Two ways this gets done.</h2>
+  <div class="paths-row">
+    <div class="path-card good">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <h3>Done For You</h3>
+      <p>We build it and run it. You keep swinging hammers, not managing spreadsheets.</p>
+    </div>
+    <div class="path-card good">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+      <h3>Taught To You</h3>
+      <p>We build it, then hand you the keys — fully documented, fully yours.</p>
+    </div>
+    <div class="path-card bad">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      <h3 class="strike">Done With You</h3>
+      <p>Feels cheaper. Actually just two people tripping over the same wire.</p>
+    </div>
+  </div>
+</section>
+
+<section id="leads">
+  <div class="eyebrow">Why bother</div>
+  <h2>This is what it's actually for.</h2>
+  <div class="leads-row">
+    <div class="lead-item">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 17h1a2 2 0 004 0h6a2 2 0 004 0h1M3 17V9l3-5h9l4 5v8M3 9h17"/><circle cx="7.5" cy="17" r="1.5"/><circle cx="17.5" cy="17" r="1.5"/></svg>
+      <h3>Second van, cash-bought</h3>
+      <p>The system supports the growth before the growth gets forced.</p>
+    </div>
+    <div class="lead-item">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <h3>A second crew</h3>
+      <p>Routines live on paper, not just in your head — so they can run without you standing there.</p>
+    </div>
+    <div class="lead-item">
+      <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="14" rx="2"/><path d="M2 8h20M8 21h8M12 18v3"/></svg>
+      <h3>A full-time office hire</h3>
+      <p>Someone to own quotes and marketing — because there's a system to hand them.</p>
+    </div>
+  </div>
+</section>
+
+<section id="cta">
+  <div class="eyebrow">Your move, Tyler</div>
+  <h2>Let's find your middle — together.</h2>
+  <p class="sub">Not chaos. Not lockdown. The version of this that still feels like Griggs.</p>
+  <div class="cta-tag">let's talk it through</div>
+</section>
+
+<script>
+  const track = document.getElementById('track');
+  const handle = document.getElementById('handle');
+  const readout = document.getElementById('readout');
+
+  const messages = [
+    {max:8,  title:"Full chaos", text:"Every job is a fire drill. Materials get forgotten. Nothing's written down — it all rides on memory."},
+    {max:20, title:"Mostly chaos", text:"Some things stick, most don't. Still one bad day away from a scramble."},
+    {max:38, title:"Leaning loose", text:"Getting better, but still reactive. Good weeks depend on who remembers what."},
+    {max:62, title:"The sweet spot", text:"Enough structure that nothing gets dropped. Still flexible enough to feel like Griggs, not a factory."},
+    {max:80, title:"Leaning tight", text:"Solid systems, but starting to feel rigid. Less room to make a judgment call."},
+    {max:92, title:"Mostly lockdown", text:"Everything scripted to the minute. Efficient, but it stops feeling personal."},
+    {max:101,title:"Full lockdown", text:"Every second controlled. No breathing room — for you or for the crew."}
+  ];
+
+  function updateReadout(pct){
+    const m = messages.find(m => pct <= m.max);
+    readout.innerHTML = `<b>${m.title}</b>${m.text}`;
+  }
+
+  function setPosition(pct){
+    pct = Math.max(3, Math.min(97, pct));
+    handle.style.left = pct + '%';
+    updateReadout(pct);
+  }
+
+  let dragging = false;
+
+  function pctFromEvent(e){
+    const rect = track.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    return ((clientX - rect.left) / rect.width) * 100;
+  }
+
+  handle.addEventListener('mousedown', () => dragging = true);
+  handle.addEventListener('touchstart', () => dragging = true, {passive:true});
+  window.addEventListener('mouseup', () => dragging = false);
+  window.addEventListener('touchend', () => dragging = false);
+  window.addEventListener('mousemove', (e) => { if(dragging){ setPosition(pctFromEvent(e)); }});
+  window.addEventListener('touchmove', (e) => { if(dragging){ setPosition(pctFromEvent(e)); }}, {passive:true});
+  track.addEventListener('click', (e) => { if(e.target === handle) return; setPosition(pctFromEvent(e)); });
+
+  setPosition(50);
+</script>
+
+</body>
+</html>
